@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#14284b" />
+    <meta
+      name="description"
+      content="Una sorpresa de cumpleaños con Stitch, música, una carta y muchos buenos deseos."
+    />
+    <title>Un universo para ti · Feliz cumpleaños</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="shell" id="shell">
+      <div class="ambient" aria-hidden="true"></div>
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Volver a la bienvenida"
+          ><span class="brand-icon">✦</span
+          ><span
+            >ohana<span class="brand-sub">UN UNIVERSO PARA TI</span></span
+          ></a
+        >
+        <div class="tools">
+          <button
+            id="music"
+            class="tool"
+            aria-pressed="false"
+            aria-label="Tocar música"
+          >
+            <span id="musicIcon">♫</span><span id="musicLabel">Música</span>
+          </button>
+          <label class="volume"
+            ><span class="sr-only">Volumen</span
+            ><input
+              id="volume"
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.35"
+              aria-label="Volumen"
+          /></label>
+        </div>
+      </header>
+
+      <main class="hero">
+        <section class="copy" id="copy">
+          <div class="eyebrow">
+            <span class="dot"></span
+            ><span id="eyebrow">ALGO BONITO ESTÁ POR PASAR</span>
+          </div>
+          <p class="chapter" id="chapter">01 / 05 · LA SORPRESA</p>
+          <h1 id="heading">Un pequeño universo,<br />solo para <em>ti.</em></h1>
+          <p class="description" id="description">
+            Hay personas que hacen la vida más bonita. Hoy vamos a celebrar a
+            una de ellas.
+          </p>
+          <div id="wishField" class="wish-field" hidden>
+            <label for="wish">Escribe tu deseo, si quieres</label
+            ><input
+              id="wish"
+              maxlength="180"
+              placeholder="Algo que te haga sonreír…"
+              autocomplete="off"
+            /><small>Tu deseo permanece aquí; no se envía a nadie.</small>
+          </div>
+          <div class="actions">
+            <button id="primary" class="primary">
+              Abrir sorpresa <span>↗</span></button
+            ><button id="secondary" class="secondary" hidden>
+              Otra sonrisa
+            </button>
+          </div>
+          <p id="help" class="help">
+            Hecho con cariño. Abre la sorpresa para escuchar la música.
+          </p>
+        </section>
+
+        <section
+          class="art-stage"
+          id="artStage"
+          aria-label="Recuerdos con Stitch"
+        >
+          <div class="halo" aria-hidden="true"></div>
+          <span class="sparkle sparkle-one" aria-hidden="true">✦</span
+          ><span class="sparkle sparkle-two" aria-hidden="true">✧</span>
+          <figure class="photo-card landscape">
+            <button
+              class="photo-button"
+              type="button"
+              aria-label="Ver otra foto de Stitch"
+            >
+              <img
+                id="landscapePhoto"
+                src="__STITCH_FOTO_0_PENDIENTE__"
+                width="1500"
+                height="938"
+                alt="Stitch sonriendo mientras canta con un micrófono."
+                decoding="async"
+              />
+            </button>
+            <figcaption>Que nunca te falten las risas.</figcaption>
+          </figure>
+          <figure class="photo-card portrait">
+            <button
+              class="photo-button"
+              type="button"
+              aria-label="Ver otra foto de Stitch"
+            >
+              <img
+                id="portraitPhoto"
+                src="__STITCH_FOTO_1_PENDIENTE__"
+                width="335"
+                height="598"
+                alt="Stitch guiñando un ojo con una expresión alegre."
+                decoding="async"
+              />
+            </button>
+            <figcaption>
+              Ohana también es celebrar contigo. <span>♡</span>
+            </figcaption>
+          </figure>
+          <div class="photo-note">
+            <span>PARA ALGUIEN</span><strong>muy especial.</strong><span class="note-heart">♡</span>
+          </div>
+          <div
+            class="balloons"
+            id="balloons"
+            aria-label="Globos con buenos deseos"
+            hidden
+          >
+            <button
+              class="balloon balloon-0"
+              data-balloon="0"
+              aria-label="Descubrir el primer deseo"
+            ></button>
+            <button
+              class="balloon balloon-1"
+              data-balloon="1"
+              aria-label="Descubrir el segundo deseo"
+            ></button>
+            <button
+              class="balloon balloon-2"
+              data-balloon="2"
+              aria-label="Descubrir el tercer deseo"
+            ></button>
+            <button
+              class="balloon balloon-3"
+              data-balloon="3"
+              aria-label="Descubrir el cuarto deseo"
+            ></button>
+            <button
+              class="balloon balloon-4"
+              data-balloon="4"
+              aria-label="Descubrir el quinto deseo"
+            ></button>
+          </div>
+          <button
+            id="cake"
+            class="cake-button"
+            aria-label="Apagar las velitas y pedir un deseo"
+            hidden
+          >
+            <svg viewBox="0 0 200 175" aria-hidden="true">
+              <ellipse cx="100" cy="153" rx="87" ry="15" fill="#d6c9ed" />
+              <path d="M29 88H171V143C171 163 29 163 29 143Z" fill="#e99fc5" />
+              <path d="M29 114H171V125H29Z" fill="#d38eb7" />
+              <ellipse cx="100" cy="88" rx="71" ry="17" fill="#fff2dc" />
+              <path
+                d="M29 87V109Q37 124 44 109V101Q53 123 62 105V97Q75 115 83 102V98Q96 119 106 105V100Q120 121 129 106V101Q142 124 151 106V98Q163 117 171 108V87"
+                fill="#fff2dc"
+              />
+              <g fill="#fbe3ac">
+                <circle cx="50" cy="132" r="3" />
+                <circle cx="72" cy="136" r="3" />
+                <circle cx="127" cy="136" r="3" />
+                <circle cx="150" cy="132" r="3" />
+              </g>
+              <g>
+                <rect
+                  x="59"
+                  y="43"
+                  width="8"
+                  height="45"
+                  rx="3"
+                  fill="#99d8ee"
+                />
+                <rect
+                  x="96"
+                  y="39"
+                  width="8"
+                  height="48"
+                  rx="3"
+                  fill="#bca7e4"
+                />
+                <rect
+                  x="133"
+                  y="43"
+                  width="8"
+                  height="45"
+                  rx="3"
+                  fill="#99d8ee"
+                />
+              </g>
+              <g class="flames" fill="#ffe19a">
+                <path d="M63 43C49 35 63 18 63 18S77 35 63 43Z" />
+                <path d="M100 39C86 31 100 14 100 14S114 31 100 39Z" />
+                <path d="M137 43C123 35 137 18 137 18S151 35 137 43Z" />
+              </g>
+              <g
+                class="smoke"
+                fill="none"
+                stroke="#b7b9d1"
+                stroke-width="3"
+                stroke-linecap="round"
+              >
+                <path d="M63 35Q53 27 64 20Q75 12 65 5" />
+                <path d="M100 31Q90 23 101 16Q112 8 102 1" />
+                <path d="M137 35Q127 27 138 20Q149 12 139 5" />
+              </g>
+            </svg>
+            <span id="cakeLabel">Pide un deseo</span>
+          </button>
+          <button id="photoToggle" class="photo-toggle">
+            Otra sonrisa <span>↻</span>
+          </button>
+        </section>
+      </main>
+
+      <footer class="bottom">
+        <nav class="journey" aria-label="Momentos de la sorpresa">
+          <button data-stage="0" class="active" aria-current="step">
+            <span>01</span>Bienvenida
+          </button>
+          <button data-stage="1" disabled><span>02</span>Fiesta</button>
+          <button data-stage="2" disabled><span>03</span>Carta</button>
+          <button data-stage="3" disabled><span>04</span>Deseo</button>
+          <button data-stage="4" disabled><span>05</span>Para ti</button>
+        </nav>
+        <p class="signature" id="signature">Con cariño, Davidson Pérez</p>
+      </footer>
+    </div>
+    <dialog
+      id="letterDialog"
+      class="letter-dialog"
+      aria-labelledby="letterTitle"
+    >
+      <button class="close" id="closeLetter" aria-label="Cerrar carta">
+        ×
+      </button>
+      <div class="letter-decoration">✦ &nbsp; UNA CARTA PARA TI &nbsp; ✦</div>
+      <h2 id="letterTitle">Querida amiga,</h2>
+      <p id="letterText"></p>
+      <p id="letterSignature" class="letter-signature"></p>
+      <button id="letterContinue" class="primary">
+        Vamos a pedir un deseo <span>→</span>
+      </button>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+    <script src="script.js"></script>
+  </body>
+</html>
